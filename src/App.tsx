@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import QuestionCard from './components/QuestionCard';
 import { fetchQuizQuestions } from './API';
 import { QuestionState, Difficulty } from './API';
-import { GlobalStyle } from './App.styles';
+import { GlobalStyle, Wrapper } from './App.styles';
 
 export type AnswerObject = {
   question: string;
@@ -76,7 +76,7 @@ const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-      <div className="App">
+      <Wrapper>
         <h1>REACT QUIZ</h1>
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
           <button className="start" onClick={startTrivia}>
@@ -107,7 +107,7 @@ const App: React.FC = () => {
             Next Question
           </button>
         ) : null}
-      </div>
+      </Wrapper>
     </>
   );
 };
